@@ -121,6 +121,20 @@ daugyba5(2, 5);
 print '<br>';
 daugyba5(3, 6, 2);
 print '<br>';
+//7.1 sukurkite funkcija kuri masyvo visas reiksmes paverstu stringais.
+$sentence = ['Mano', 'vardas', 'Tomas', 'man', 34, 'metai', 'aš', 'nubegu', 4.75, 'km',];
+
+$new_array = [];
+function get_string($array)
+{
+    foreach ($array as $value) {
+        $new_array[] = strval($value);
+    }
+    return $new_array;
+}
+
+var_dump(get_string($sentence));
+
 
 
 
