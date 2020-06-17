@@ -152,6 +152,61 @@ function atspausdinti($string)
 atspausdinti(sakinys_su_kableliais(get_string($sentence)));
 print '<br><br>';
 
+//8. Sukurkite masyva, panaudojus funkcija padarykite, kad rodytu du inputus viena mygtuka
+var_dump($_POST);
+$form = [
+    'inputs' => [
+        'user_name' => [
+            'type' => 'text',
+            'placeholder' => 'User name:',
+            'name' => 'user_name',
+        ],
+        'user_email' => [
+            'type' => 'email',
+            'placeholder' => 'User email:',
+            'name' => 'user_email',
+        ],
+        'user_password' => [
+            'type' => 'password',
+            'placeholder' => 'User password:',
+            'name' => 'user_password',
+        ],
+        'user_age' => [
+            'type' => 'number',
+            'placeholder' => 'User age:',
+            'name' => 'user_age',
+        ],
+    ],
+    'buttons' => [
+        'send' => [
+            'type' => 'submit',
+            'value' => 'Submit',
+        ],
+    ],
+];
+
+
+function get_form($array, $input_name1, $input_name2 = false, $input_name3 = false)
+{
+    print '<form method="post">';
+    foreach ($array['inputs'] as $input) {
+        if ($input['name'] == $input_name1) {
+            print '<input type="' . $input['type'] . '" placeholder="' . $input['placeholder'] . '" name="' . $input['name'] . '" >';
+        } elseif ($input['name'] == $input_name2) {
+            print '<input type="' . $input['type'] . '" placeholder="' . $input['placeholder'] . '" name="' . $input['name'] . '" >';
+        } elseif ($input['name'] == $input_name3) {
+            print '<input type="' . $input['type'] . '" placeholder="' . $input['placeholder'] . '" name="' . $input['name'] . '" >';
+        }
+    }
+    foreach ($array['buttons'] as $button) {
+        print '<input type="' . $button['type'] . '" value="' . $button['value'] . '" >';
+    }
+    print '</form>';
+}
+
+get_form($form, 'user_name', 'user_age');
+
+
 
 ?>
 
