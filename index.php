@@ -135,7 +135,22 @@ function get_string($array)
 
 var_dump(get_string($sentence));
 
+//7.2 sukurkite funkcija kuri visas masyvo reiksmes sudetu i viena sakini atskiriant per kablele
 
+function sakinys_su_kableliais($array)
+{
+    return implode(", ", $array);
+}
+var_dump(sakinys_su_kableliais($sentence));
+
+//7.3 atvaizduokite visa tai ekrane.
+function atspausdinti($string)
+{
+    print $string;
+}
+
+atspausdinti(sakinys_su_kableliais(get_string($sentence)));
+print '<br><br>';
 
 
 ?>
