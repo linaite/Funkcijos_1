@@ -102,6 +102,27 @@ data_in_table_one($users);
 print '<br><br>';
 print '<br><br>';
 
+//6. Susumuokite skaicius (tarp kintamuju iterpiant 0)
+//Sumuojam
+function sum2($number1, $number2, $number3, $number4 = 0, $number5 = 0)
+{
+    print $number1 + $number2 + $number3 + $number4 + $number5;
+}
+
+sum2(3, 5, 5);
+print '<br><br>';
+
+//Dauginam
+function daugyba5($skaicius1, $skaicius2, $skaicius3 = 1, $skaicius4 = 1, $skaicius5 = 1)
+{
+    print $skaicius1 * $skaicius2 * $skaicius3 * $skaicius4 * $skaicius5 . '<br>';
+}
+daugyba5(2, 5);
+print '<br>';
+daugyba5(3, 6, 2);
+print '<br>';
+
+
 
 ?>
 
