@@ -34,6 +34,26 @@ function welcome_name($name)
 welcome_name('Dariau!');
 print '<br><br>';
 
+//4. Sukurti registracijos forma su POSt metodu, sukurti funkcija kuri paimtu $_POST masyva ir is
+// jo grazintu string pavidalo rezultata 'Jus prisijungete, Dainius Dainiauskas'
+
+var_dump($_POST);
+////1 variantas
+function get_data($array)
+{
+    print 'Jus prisijungete, ' . $array['user_name'] . ' ' . $array['user_surname'];
+}
+get_data($_POST);
+print '<br><br>';
+
+//2 variantas-sukurkite dar du kintamuosius STRING kurie
+////nurodytu kokius KEY reikes paimti is masyvo
+function get($array, $key1, $key2)
+{
+    print 'Jus prisijungete, ' . $array[$key1] . ' ' . $array[$key2];
+}
+get($_POST, 'user_name', 'user_surname');
+print '<br><br><br>';
 
 
 ?>
