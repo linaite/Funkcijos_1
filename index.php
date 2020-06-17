@@ -54,6 +54,53 @@ function get($array, $key1, $key2)
 }
 get($_POST, 'user_name', 'user_surname');
 print '<br><br><br>';
+//5.  Sukurkite funkcija kuri sugeneruotu mums lentele pagal masyva.
+$users = [
+    [
+        'id' => 1,
+        'user_name' => 'Jonas',
+        'user_surname' => 'Jonaitis',
+        'user_age' => 18,
+        'phone' => 'Apple'
+    ],
+    [
+        'id' => 2,
+        'user_name' => 'Petras',
+        'user_surname' => 'Petraitis',
+        'user_age' => 20,
+        'phone' => 'Nokia',
+    ],
+];
+
+////5.1 budas-statinis
+function data_in_table($masyvas)
+{
+    print '<table align="left" border="1" cellpadding="3" cellspacing="0">';
+    foreach ($masyvas as $user) {
+        print '<tr><td>' . $user['id'] . '</td>' . '<td>' . $user['user_name'] . '</td>' . '<td>' . $user['user_surname'] . '</td>' . '<td>' . $user['age'] . '</td></tr>';
+    }
+    print '</table>';
+}
+data_in_table($users);
+print '<br><br>';
+print '<br><br>';
+
+//5.2 budas-dinaminis!!! Pagrinde sita naudojame!!!!!!
+function data_in_table_one($array)
+{
+    print '<table align="left" border="1" cellpadding="3" cellspacing="0">';
+    foreach ($array as $user) {
+        print '<tr>';
+        foreach ($user as $user_data) {
+            print "<td>$user_data</td>";
+        }
+        print '</tr>';
+    }
+    print '</table>';
+}
+data_in_table_one($users);
+print '<br><br>';
+print '<br><br>';
 
 
 ?>
